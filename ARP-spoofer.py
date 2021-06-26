@@ -42,7 +42,7 @@ def restore(target_ip, spoof_ip):
 
 
 def spoof(target_ip, spoof_ip, count, sleeptime):
-    print("ARP-spoofer coded by @koushik")
+    print("\nARP-spoofer coded by @koushikk11\n")
     subprocess.run("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
     print("[+]ip forwarding enabled")
     print("[+]( machine1 )-<->-( YOU )-<->-( machine2 )")

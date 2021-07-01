@@ -42,6 +42,7 @@ def restore(target_ip, spoof_ip):
 
 def spoof(target_ip, spoof_ip, count, sleeptime):
     print("\nARP-spoofer coded by @koushikk11\n")
+    print("NOTE: if u r getting this error 5 times in a row ,just re-run the code\nERROR: <ip-address> is not active ..not sure...Trying again\n")
     subprocess.run("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
     print("[+]ip forwarding enabled")
     print("[+]( machine1 )-<->-( YOU )-<->-( machine2 )")

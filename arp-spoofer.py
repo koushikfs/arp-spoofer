@@ -25,7 +25,6 @@ def get_mac(ip):
         return sendpacket[0][1].hwsrc
     except IndexError:
         print("\n[-]{} is not active ...Try again".format(ip))
-        exit()
 
 
 def restore(target_ip, spoof_ip):

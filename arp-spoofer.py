@@ -30,7 +30,7 @@ def get_mac(ip):
 
 
 def restore(target_ip, spoof_ip):
-    for i in range(0, 2):
+    for i in range(0, 4):
         spoof_real_mac = get_mac(spoof_ip)
         target_mac = get_mac(target_ip)
         packet = scapy.ARP(op=2, psrc=spoof_ip, pdst=target_ip, hwsrc=spoof_real_mac, hwdst=target_mac)

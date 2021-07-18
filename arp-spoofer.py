@@ -11,7 +11,7 @@ def get_arguments():
     arguments.add_option("-s", "--spoof", metavar='\b', dest="spoof_ip", help="spoof ip[machine-2](router or another machine on local network)")
     arguments.add_option("-p", "--sleep", metavar='\b', dest="sleeptime", default=0, help="time to sleep after sending a packet(default=0)")
     arguments.add_option("-c", "--count", metavar='\b', dest="count", default=1000, help="number of packets to be sent(default=1000)")
-    arguments.add_option("-i", "--interface", metavar='\b', dest="interface", default=1000, help="give interface")
+    arguments.add_option("-i", "--interface", metavar='\b', dest="interface", help="give interface")
     values, options = arguments.parse_args()
     if not (values.target_ip and values.spoof_ip and values.interface):
         arguments.error("give arguments\n[+]HELP: python3 arp_spoofer.py -h")

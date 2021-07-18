@@ -32,12 +32,17 @@ def get_mac(ip):
 
         
 def get_interface_mac(interface):
-    ifconfig_result = subprocess.check_output(["ifconfig", values.interface])
-    extracted_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", str(ifconfig_result))
-    if extracted_result:
-        return extracted_result.group(0)
-    else:
-        print("[-]couldn't find any mac address for the given interface")
+    try:
+        ifconfig_result = subprocess.check_output(["ifconfig", values.interface])
+        extracted_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", str(ifconfig_result))
+        if extracted_result:
+            return extracted_result.group(0)
+        else:
+            print("[-]couldn't find any mac address for the given interface")
+            exit()
+    except subprocess.CalledProcessError:
+        print("no such interface")
+        print("[+]OK Quiting...")
         exit()
 
 

@@ -41,7 +41,7 @@ def get_interface_mac(interface):
             print("[-]couldn't find any mac address for the given interface")
             exit()
     except subprocess.CalledProcessError:
-        print("no such interface")
+        print("[-]no such interface")
         print("[+]OK Quiting...")
         exit()
 

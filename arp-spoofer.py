@@ -2,6 +2,7 @@ import scapy.all as scapy
 import optparse
 import time
 import subprocess
+import re
 
 
 def get_arguments():

@@ -26,8 +26,8 @@ def get_mac(ip):
         sendpacket = scapy.srp(create_packet, timeout=1, verbose=False)[0]
         return sendpacket[0][1].hwsrc
     except IndexError:
-        print("[-]{} is not active".format(ip))
-        print("\n[+]OK Quiting...")
+        print("\n[-]{} is not active".format(ip))
+        print("[+]OK Quiting...")
         exit()
 
         
